@@ -4,13 +4,7 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { ValidationPipe } from '@nestjs/common';
 
 function validateEnv() {
-  const required = [
-    'POSTGRES_HOST',
-    'POSTGRES_PORT',
-    'POSTGRES_USER',
-    'POSTGRES_PASSWORD',
-    'POSTGRES_DATABASE',
-  ] as const;
+  const required = ['POSTGRES_URL'] as const;
 
   required.forEach((key) => {
     if (!process.env[key]) {
@@ -29,6 +23,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
+  app.enableCors();
 
   const config = new DocumentBuilder()
     .setTitle('WebQuiz API')

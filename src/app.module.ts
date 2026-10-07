@@ -20,14 +20,16 @@ import { IS_DEV_ENV } from './utils/is-dev.util';
     }),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: process.env.POSTGRES_HOST,
-      port: Number(process.env.POSTGRES_PORT ?? 5432),
-      username: process.env.POSTGRES_USER,
-      password: process.env.POSTGRES_PASSWORD,
-      database: process.env.POSTGRES_DATABASE,
+      host: 'aws-0-us-east-1.pooler.supabase.com',
+      port: 6543,
+      username: 'postgres.pvmdteetrhuncxeqhgyb', // из POSTGRES_URL
+      password: 'DmtkT9pLvX4DU6OT', // из POSTGRES_URL (срочно смените!)
+      database: 'postgres',
       entities: [Category, Quiz],
-      ssl: { rejectUnauthorized: false },
-      synchronize: IS_DEV_ENV,
+      ssl: {
+        rejectUnauthorized: false,
+      },
+      synchronize: false,
     }),
     QuizesModule,
     CategoriesModule,
