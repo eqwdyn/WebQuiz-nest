@@ -12,7 +12,7 @@ async function bootstrap() {
   const expressApp = express();
   const adapter = new ExpressAdapter(expressApp);
   const app = await NestFactory.create(AppModule, adapter, {
-    logger: false,
+    logger: ['error', 'warn'],
   });
 
   app.enableCors({
@@ -26,6 +26,14 @@ async function bootstrap() {
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  const app = await bootstrap();
-  return app(req as any, res as any);
+  try {
+    const app = await bootstrap();
+    return app(req as any, res as any);
+  } catch (error: any) {
+    console.error('NEST INIT ERROR:', error);
+    res.status(500).json({
+      error: error?.message || 'Unknown error',
+      stack: error?.stack?.split('\n').slice(0, 5),
+    });
+  }
 }
