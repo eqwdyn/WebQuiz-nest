@@ -11,7 +11,7 @@ import {
 } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { CategoriesService } from './categories.service';
-import { CreateCategoryDto } from 'src/categories/dto/create-category.dto';
+import { CreateCategoryDto } from './dto/create-category.dto';
 // import { CacheInterceptor } from '@nestjs/cache-manager';
 
 @ApiTags('Categories')

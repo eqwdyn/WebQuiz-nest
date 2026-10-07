@@ -13,10 +13,10 @@ import {
 } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse, ApiParam } from '@nestjs/swagger';
 import { QuizesService } from './quiz.service';
-import { CreateQuizDto } from 'src/quizes/dto/create-quiz.dto';
-import { Quiz } from 'src/entities/quiz.entity';
-import { QuizStack } from 'src/quizes/interface/QuizStack.interface';
-import { IdsToSkipDto } from 'src/quizes/dto/ids-to-skip.dto';
+import { CreateQuizDto } from './dto/create-quiz.dto';
+import { IdsToSkipDto } from './dto/ids-to-skip.dto';
+import { Quiz } from '../entities/quiz.entity';
+import { QuizStack } from './interface/QuizStack.interface';
 // import { CacheInterceptor } from '@nestjs/cache-manager';
 
 @ApiTags('Quizes')

@@ -4,11 +4,11 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { CategoriesService } from 'src/categories/categories.service';
-import { Quiz } from 'src/entities/quiz.entity';
-import { CreateQuizDto } from 'src/quizes/dto/create-quiz.dto';
-import { QuizStack } from 'src/quizes/interface/QuizStack.interface';
 import { Repository, Not, In } from 'typeorm';
+import { Quiz } from '../entities/quiz.entity';
+import { CategoriesService } from '../categories/categories.service';
+import { QuizStack } from './interface/QuizStack.interface';
+import { CreateQuizDto } from './dto/create-quiz.dto';
 
 @Injectable()
 export class QuizesService {
