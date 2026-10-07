@@ -5,11 +5,11 @@ import { ValidationPipe } from '@nestjs/common';
 
 function validateEnv() {
   const required = [
-    'DB_HOST',
-    'DB_PORT',
-    'DB_USERNAME',
-    'DB_PASSWORD',
-    'DB_NAME',
+    'POSTGRES_HOST',
+    'POSTGRES_PORT',
+    'POSTGRES_USER',
+    'POSTGRES_PASSWORD',
+    'POSTGRES_DATABASE',
   ] as const;
 
   required.forEach((key) => {
