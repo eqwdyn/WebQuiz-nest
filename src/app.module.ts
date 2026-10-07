@@ -2,11 +2,10 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { CategoriesModule } from 'src/categories/categories.module';
-import { Category } from 'src/entities/category.entity';
-import { Quiz } from 'src/entities/quiz.entity';
-import { QuizesModule } from 'src/quizes/quiz.module';
-import { IS_DEV_ENV } from './utils/is-dev.util';
+import { Category } from './entities/category.entity';
+import { Quiz } from './entities/quiz.entity';
+import { QuizesModule } from './quizes/quiz.module';
+import { CategoriesModule } from './categories/categories.module';
 
 @Module({
   imports: [
