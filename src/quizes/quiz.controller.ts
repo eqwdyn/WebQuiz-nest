@@ -9,7 +9,7 @@ import {
   HttpStatus,
   Query,
   BadRequestException,
-  UseInterceptors,
+  //   UseInterceptors,
 } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse, ApiParam } from '@nestjs/swagger';
 import { QuizesService } from './quiz.service';
@@ -17,7 +17,7 @@ import { CreateQuizDto } from 'src/quizes/dto/create-quiz.dto';
 import { Quiz } from 'src/entities/quiz.entity';
 import { QuizStack } from 'src/quizes/interface/QuizStack.interface';
 import { IdsToSkipDto } from 'src/quizes/dto/ids-to-skip.dto';
-import { CacheInterceptor } from '@nestjs/cache-manager';
+// import { CacheInterceptor } from '@nestjs/cache-manager';
 
 @ApiTags('Quizes')
 @ApiResponse({
@@ -28,7 +28,7 @@ import { CacheInterceptor } from '@nestjs/cache-manager';
   status: 500,
   description: 'Internal server error',
 })
-@UseInterceptors(CacheInterceptor)
+// @UseInterceptors(CacheInterceptor)
 @Controller('quizes')
 export class QuizesController {
   constructor(private readonly quizesService: QuizesService) {}

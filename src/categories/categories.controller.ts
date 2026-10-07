@@ -7,16 +7,16 @@ import {
   Delete,
   HttpCode,
   HttpStatus,
-  UseInterceptors,
+  //   UseInterceptors,
 } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { CategoriesService } from './categories.service';
 import { CreateCategoryDto } from 'src/categories/dto/create-category.dto';
-import { CacheInterceptor } from '@nestjs/cache-manager';
+// import { CacheInterceptor } from '@nestjs/cache-manager';
 
 @ApiTags('Categories')
 @Controller('categories')
-@UseInterceptors(CacheInterceptor)
+// @UseInterceptors(CacheInterceptor)
 export class CategoriesController {
   constructor(private readonly categoriesService: CategoriesService) {}
 
