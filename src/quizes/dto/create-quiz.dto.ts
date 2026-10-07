@@ -1,7 +1,7 @@
 import { IsString, IsNotEmpty, IsArray, IsInt } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
-import { IsCorrectAnswerInAnswers } from 'src/utils/contains-correct-answer.validator';
-import { IsEachAnswerString } from 'src/utils/is-each-answer-string.validator';
+import { IsEachAnswerString } from '../../utils/is-each-answer-string.validator';
+import { IsCorrectAnswerInAnswers } from '../../utils/contains-correct-answer.validator';
 
 export class CreateQuizDto {
   @ApiProperty({

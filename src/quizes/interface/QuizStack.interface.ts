@@ -1,4 +1,4 @@
-import { Quiz } from 'src/entities/quiz.entity';
+import { Quiz } from '../../entities/quiz.entity';
 
 export interface QuizStack {
   data: Quiz[];
